@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #111827;
+  --accent: #0ea5e9;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+

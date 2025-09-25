@@ -624,15 +624,15 @@ function ProductDetailPage() {
 
   return (
     <>
-      <PageHeader title={product.title} desc={product.category} />
+      <PageHeader title={'title' in product ? product.title : product.name} desc={product.category} />
       <section className="py-10">
         <Container>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="rounded-xl border bg-white overflow-hidden">
-              <img src={(product as any).src ?? product.images?.[0]} alt={product.title} className="w-full h-full object-contain" />
+              <img src={'src' in product ? product.src : product.images?.[0]} alt={'title' in product ? product.title : product.name} className="w-full h-full object-contain" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">{product.title}</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{'title' in product ? product.title : product.name}</h2>
               <div className="mt-2 text-sm text-gray-500">Danh mục: {product.category}</div>
               <div className="mt-6 space-y-3 text-gray-700">
                 <p>{(product as any).description ?? 'Liên hệ để được tư vấn mẫu mã, chất liệu vải và báo giá tốt nhất.'}</p>

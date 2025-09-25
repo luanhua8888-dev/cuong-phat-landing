@@ -19,5 +19,10 @@ declare module '*.svg' {
   export default src
 }
 
+// Vite import.meta.glob types
+interface ImportMeta {
+  glob: (pattern: string, options?: { eager?: boolean; as?: string }) => Record<string, any>
+}
+
 
 
